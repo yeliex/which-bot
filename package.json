@@ -2,7 +2,14 @@
   "name": "which-bot",
   "version": "1.0.0",
   "description": "detect which bot is from user-agent and is trustable\n\n",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "tsc",
