@@ -1,6 +1,6 @@
 {
   "name": "which-bot",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "detect which bot is from user-agent and is trustable\n\n",
   "main": "index.js",
   "scripts": {
