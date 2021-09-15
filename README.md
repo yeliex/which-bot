@@ -33,6 +33,19 @@ await parse(
 ```
 
 # API Reference
+## const RULES
+```typescript
+type RULES = Array<{
+    company: string;
+    pattern: RegExp;
+    hosts?: string[];
+    bots: Array<{
+        name: string;
+        pattern: RegExp;
+    }>
+}>
+```
+
 ## parse(ua: string)
 ```typescript
 interface BotItem {

@@ -77,4 +77,4 @@ function is(name: string, ua: string, ip?: string): BotItem | false | Promise<(B
     });
 }
 
-export { parse, is };
+export { parse, is, RULES };
