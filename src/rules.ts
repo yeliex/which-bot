@@ -111,8 +111,12 @@ const rules: RuleItem[] = [
                 pattern: /Baiduspider-ads/,
             },
             {
+                name: 'baidu-smartapp',
+                pattern: /Baiduspider(-render)?.*Smartapp/,
+            },
+            {
                 name: 'baidu',
-                pattern: /Baiduspider/,
+                pattern: /Baiduspider(-render)?/,
             },
         ],
         hosts: [
