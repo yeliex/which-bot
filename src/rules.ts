@@ -11,7 +11,7 @@ export interface RuleItem {
 
 const rules: RuleItem[] = [
     {
-        company: 'google',
+        company: 'Google',
         bots: [
             {
                 name: 'googlebot-image',
@@ -84,7 +84,7 @@ const rules: RuleItem[] = [
         ],
     },
     {
-        company: 'baidu',
+        company: 'Baidu',
         bots: [
             {
                 name: 'baidu-image',
@@ -125,15 +125,129 @@ const rules: RuleItem[] = [
         ],
     },
     {
-        company: 'bing',
+        company: 'Bing',
         bots: [
             {
                 name: 'bingbot',
                 pattern: /Bingbot/,
             },
         ],
+        hosts: [
+            'search.msn.com',
+        ],
+    },
+    {
+        company: 'Alibaba',
+        bots: [
+            {
+                name: 'shenma-mobile',
+                pattern: /YisouSpider.*Mobile/,
+            },
+            {
+                name: 'shenma',
+                pattern: /YisouSpider/,
+            },
+        ],
+        hosts: [
+            'sm.cn',
+        ],
+    },
+    {
+        company: '360',
+        bots: [
+            {
+                name: '360-image',
+                pattern: /360Spider-Image/,
+            },
+            {
+                name: '360-video',
+                pattern: /360Spider-Video/,
+            },
+            {
+                name: '360-mobile',
+                pattern: /Mobile.*(Haosou|360)Spider/,
+            },
+            {
+                name: '360',
+                pattern: /360Spider/,
+            },
+        ],
+    },
+    {
+        company: 'Tencent',
+        bots: [
+            {
+                name: 'soso-image',
+                pattern: /Sosoimagespider/,
+            },
+            {
+                name: 'soso',
+                pattern: /Sosospider/,
+            },
+        ],
+    },
+    {
+        company: 'Sogou',
+        bots: [
+            {
+                name: 'sogou-video',
+                pattern: /Sogou Video Spider/,
+            },
+            {
+                name: 'sogou-pic',
+                pattern: /Sogou Pic Spider/,
+            },
+            {
+                name: 'sogou-news',
+                pattern: /Sogou News Spider/,
+            },
+            {
+                name: 'sogou-inst',
+                pattern: /Sogou inst spider/,
+            },
+            {
+                name: 'sogou-web',
+                pattern: /Sogou web spider/,
+            },
+            {
+                name: 'sogou',
+                pattern: /Sogou.*spider/i,
+            },
+        ],
+    },
+    {
+        company: 'Bytedance',
+        bots: [
+            {
+                name: 'toutiao-android',
+                pattern: /Android.*Mobile.*Bytespider/,
+            },
+            {
+                name: 'toutiao-ios',
+                pattern: /iPhone.*Mobile.*Bytespider/,
+            },
+            {
+                name: 'toutiao',
+                pattern: /Bytespider/,
+            },
+        ],
+        hosts: [
+            'bytedance.com',
+        ],
+    },
+    {
+        company: 'Others',
+        bots: [
+            {
+                name: 'unrecognized-spider',
+                pattern: /spider/i,
+            },
+            {
+                name: 'unrecognized-bot',
+                pattern: /bot/i,
+            },
+        ],
     },
 ];
-
 
 export default serializeRules(rules);
