@@ -1,7 +1,7 @@
 {
   "name": "which-bot",
   "version": "1.0.2",
-  "description": "detect which bot is from user-agent and is trustable\n\n",
+  "description": "detect which bot is from user-agent and is trustable",
   "main": "dist/index.js",
   "files": [
     "dist",
