@@ -129,7 +129,7 @@ const rules: RuleItem[] = [
         bots: [
             {
                 name: 'bingbot',
-                pattern: /Bingbot/,
+                pattern: /Bingbot/i,
             },
         ],
         hosts: [
