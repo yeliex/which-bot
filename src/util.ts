@@ -3,7 +3,12 @@ import { RuleItem } from './rules';
 const mergeRegexp = (rules: RegExp[]): RegExp => {
     const sources = rules.map(item => item.source);
 
-    return new RegExp(sources.join('|'));
+    const flags = Array.from(new Set(Array.prototype.concat(
+        [],
+        ...rules.map(item => item.flags ? item.flags.split('') : []),
+    )));
+
+    return new RegExp(sources.join('|'), flags.join('') || 'i');
 };
 
 export const serializeRules = (rules: RuleItem[]): Array<RuleItem & { pattern: RegExp }> => {
@@ -11,7 +16,7 @@ export const serializeRules = (rules: RuleItem[]): Array<RuleItem & { pattern: R
         const bots = item.bots.map(item => {
             return {
                 ...item,
-                pattern: new RegExp(item.pattern),
+                pattern: new RegExp(item.pattern, item.pattern instanceof RegExp && item.pattern.flags || 'i'),
             };
         });
 
@@ -25,6 +30,7 @@ export const serializeRules = (rules: RuleItem[]): Array<RuleItem & { pattern: R
 
 export const match = (ua: string, rules: Array<RuleItem & { pattern: RegExp }>) => {
     for (const group of rules) {
+        console.log(`pattern: ${group.pattern} ${ua.match(group.pattern)}`);
         if (!ua.match(group.pattern)) {
             continue;
         }

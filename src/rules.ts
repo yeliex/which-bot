@@ -27,7 +27,7 @@ const rules: RuleItem[] = [
             },
             {
                 name: 'googlebot',
-                pattern: /Googlebot/,
+                pattern: /Googlebot/i,
             },
             {
                 name: 'apis-google',
