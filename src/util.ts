@@ -30,7 +30,6 @@ export const serializeRules = (rules: RuleItem[]): Array<RuleItem & { pattern: R
 
 export const match = (ua: string, rules: Array<RuleItem & { pattern: RegExp }>) => {
     for (const group of rules) {
-        console.log(`pattern: ${group.pattern} ${ua.match(group.pattern)}`);
         if (!ua.match(group.pattern)) {
             continue;
         }
